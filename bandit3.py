@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from pwn import *
+from pwn import ssh
 
 username = 'bandit2'
 host = 'bandit.labs.overthewire.org'
-password = args['PASSWORD']  # CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+password = 'CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9'
 
 shell = ssh(username, host, password=password)
 sh = shell.run('sh')
