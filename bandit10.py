@@ -10,4 +10,6 @@ password = 'UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR'
 shell = ssh(username, host, password=password)
 sh = shell.run('bash')
 sh.sendline("strings data.txt |grep ^= | awk '{print $2}'")
-print sh.recvlines(10, timeout=5)
+sh.shutdown()
+print sh.recvall()
+sh.close()
